@@ -148,6 +148,7 @@ code {
 }
 
 div.sidebar {
+  color: black;
   position: absolute;
   left: 0rem;
   top: 0rem;
@@ -166,12 +167,21 @@ div.sidebar div.link {
   width: auto;
 }
 
+div.sidebar div.link a {
+  color: darkslategray;
+}
+
+div.sidebar div.link a:visited {
+  color: black;
+}
+
 div.sidebar div.link:hover {
   background-image: -webkit-gradient(linear, left top, left bottom, from(darkgray), to(darkgray));
   background-image: linear-gradient(darkgray, darkgray);
 }
 
 div.sidebar div.section {
+  color: black;
   border-top: 0.1rem solid lightslategray;
   border-left: 0.1rem solid lightslategray;
   padding-left: 0.2rem;
@@ -182,6 +192,7 @@ div.sidebar div.section ul {
 }
 
 div.sidebar h2, div.sidebar h3 {
+  color: black;
   text-align: left;
   padding-left: 1rem;
   padding-top: 0.1rem;

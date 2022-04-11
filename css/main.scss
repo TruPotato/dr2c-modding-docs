@@ -92,6 +92,7 @@ code {
 }
 
 div.sidebar {
+    color: black;
     position: absolute;
     left: 0rem;
     top: 0rem;
@@ -99,6 +100,12 @@ div.sidebar {
     height: 100%;
     background-color: lightgrey;
     div.link {
+        a {
+            color: darkslategray;
+            &:visited {
+                color: black;
+            }
+        }
         border: 0.1rem solid lightslategrey;
         padding: {
             left: 1rem;
@@ -112,6 +119,7 @@ div.sidebar {
         width: auto;
     }
     div.section {
+        color: black;
         border-top: 0.1rem solid lightslategray;
         border-left: 0.1rem solid lightslategray;
         padding-left: 0.2rem;
@@ -120,6 +128,7 @@ div.sidebar {
         }
     }
     h2, h3 {
+        color: black;
         text-align: left;
         padding: {
             left: 1rem;
