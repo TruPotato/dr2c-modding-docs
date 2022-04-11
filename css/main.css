@@ -2,12 +2,31 @@
 * {
   margin: 0rem;
   padding: 0rem;
-  color: white;
   font-family: 'Play', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, a, p {
   text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: white;
+}
+
+a {
+  color: red;
+}
+
+a:hover {
+  color: pink;
+}
+
+a:visited {
+  color: white;
+}
+
+a:active {
+  color: white;
 }
 
 html {
@@ -52,7 +71,36 @@ div.landing {
   max-width: 52rem;
 }
 
-div.landing h1, div.landing h2, div.landing h3, div.landing h4, div.landing h5, div.landing h6, div.landing p, div.landing div {
+div.landing h1, div.landing h2, div.landing h3, div.landing h4, div.landing h5, div.landing h6, div.landing p, div.landing a, div.landing div {
   background-color: black;
+}
+
+div.links {
+  border-top-color: transparent;
+  border-top-style: solid;
+  border-top-width: 20px;
+  border-right-color: transparent;
+  border-right-style: solid;
+  border-right-width: 20px;
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  border-bottom-width: 20px;
+  border-left-color: transparent;
+  border-left-style: solid;
+  border-left-width: 20px;
+  border-image-source: url("http://deathroadtocanada.com/images/drtc_border.png");
+  border-image-slice: 20;
+  border-image-width: 1;
+  border-image-outset: 0;
+  max-width: 32rem;
+}
+
+div.links h1, div.links h2, div.links h3, div.links h4, div.links h5, div.links h6, div.links p, div.links a, div.links div {
+  background-color: black;
+}
+
+div.links ul {
+  list-style-type: none;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
