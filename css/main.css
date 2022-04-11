@@ -68,6 +68,7 @@ div.landing {
   border-image-slice: 20;
   border-image-width: 1;
   border-image-outset: 0;
+  border-image-source: url("../images/drtc_border.png");
   max-width: 52rem;
 }
 
@@ -92,6 +93,7 @@ div.links {
   border-image-slice: 20;
   border-image-width: 1;
   border-image-outset: 0;
+  border-image-source: url("../images/drtc_border.png");
   max-width: 32rem;
 }
 

@@ -58,10 +58,12 @@ div.header {
 
 div.landing {
     @include textbox;
+    border-image-source: url("../images/drtc_border.png");
     max-width: 52rem;
 }
 div.links {
     @include textbox;
+    border-image-source: url("../images/drtc_border.png");
     max-width: 32rem;
     ul {
         list-style-type: none;
