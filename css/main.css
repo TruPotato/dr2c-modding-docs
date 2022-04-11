@@ -136,6 +136,7 @@ div.textbox {
   border-image-outset: 0;
   border-image-source: url("../images/drtc_border.png");
   max-width: 45%;
+  color: white;
 }
 
 div.textbox h1, div.textbox h2, div.textbox h3, div.textbox h4, div.textbox h5, div.textbox h6, div.textbox p, div.textbox a, div.textbox div {
@@ -203,6 +204,10 @@ div div.codeblock {
   background-color: #333;
   padding: 0.3rem;
   border-radius: 0.2rem;
+}
+
+code {
+  background-color: #333;
 }
 
 @media screen and (max-width: 740px) {

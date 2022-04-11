@@ -84,6 +84,7 @@ div.textbox {
     @include textbox;
     border-image-source: url("../images/drtc_border.png");
     max-width: 45%;
+    color: white;
 }
 
 code {
@@ -143,9 +144,14 @@ div {
         background-color: #333;
         padding: 0.3rem;
         border-radius: 0.2rem;
+        
     }
 }
 
+code {
+    background-color: #333;
+
+}
 @media screen and (max-width: 740px) {
     div.sidebar {
         color: black;
