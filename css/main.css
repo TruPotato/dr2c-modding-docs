@@ -5,6 +5,14 @@
   font-family: 'Play', sans-serif;
 }
 
+body {
+  height: 100%;
+}
+
+img {
+  max-width: 45%;
+}
+
 h1, h2, h3, h4, h5, h6, a, p {
   text-align: center;
 }
@@ -33,6 +41,8 @@ html {
   background-image: url("../images/bg.png");
   background-attachment: fixed;
   background-color: black;
+  min-height: 100%;
+  position: relative;
 }
 
 div {
@@ -70,14 +80,14 @@ div.landing {
   border-image-width: 1;
   border-image-outset: 0;
   border-image-source: url("../images/drtc_border.png");
-  max-width: 52rem;
+  max-width: 45%;
 }
 
 div.landing h1, div.landing h2, div.landing h3, div.landing h4, div.landing h5, div.landing h6, div.landing p, div.landing a, div.landing div {
   background-color: black;
 }
 
-div.links {
+div.contributors {
   border-top-color: transparent;
   border-top-style: solid;
   border-top-width: 20px;
@@ -95,15 +105,124 @@ div.links {
   border-image-width: 1;
   border-image-outset: 0;
   border-image-source: url("../images/drtc_border.png");
-  max-width: 32rem;
+  max-width: 29%;
 }
 
-div.links h1, div.links h2, div.links h3, div.links h4, div.links h5, div.links h6, div.links p, div.links a, div.links div {
+div.contributors h1, div.contributors h2, div.contributors h3, div.contributors h4, div.contributors h5, div.contributors h6, div.contributors p, div.contributors a, div.contributors div {
   background-color: black;
 }
 
-div.links ul {
+div.contributors ul {
   list-style-type: none;
   text-align: center;
+}
+
+div.textbox {
+  border-top-color: transparent;
+  border-top-style: solid;
+  border-top-width: 20px;
+  border-right-color: transparent;
+  border-right-style: solid;
+  border-right-width: 20px;
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  border-bottom-width: 20px;
+  border-left-color: transparent;
+  border-left-style: solid;
+  border-left-width: 20px;
+  border-image-source: url("../images/drtc_border.png");
+  border-image-slice: 20;
+  border-image-width: 1;
+  border-image-outset: 0;
+  border-image-source: url("../images/drtc_border.png");
+  max-width: 45%;
+}
+
+div.textbox h1, div.textbox h2, div.textbox h3, div.textbox h4, div.textbox h5, div.textbox h6, div.textbox p, div.textbox a, div.textbox div {
+  background-color: black;
+}
+
+code {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+div.sidebar {
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  width: 10%;
+  height: 100%;
+  background-color: lightgrey;
+}
+
+div.sidebar div.link {
+  border: 0.1rem solid lightslategrey;
+  padding-left: 1rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(lightgrey), to(darkgray));
+  background-image: linear-gradient(lightgrey, darkgray);
+  width: auto;
+}
+
+div.sidebar div.link:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(darkgray), to(darkgray));
+  background-image: linear-gradient(darkgray, darkgray);
+}
+
+div.sidebar div.section {
+  border-top: 0.1rem solid lightslategray;
+  border-left: 0.1rem solid lightslategray;
+  padding-left: 0.2rem;
+}
+
+div.sidebar div.section ul {
+  list-style-type: disc;
+}
+
+div.sidebar h2, div.sidebar h3 {
+  text-align: left;
+  padding-left: 1rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+@media screen and (max-width: 740px) {
+  div.sidebar {
+    position: absolute;
+    left: 0rem;
+    top: 0rem;
+    width: 20%;
+    height: 100%;
+    background-color: lightgrey;
+  }
+  div.sidebar div.link {
+    border: 0.1rem solid lightslategrey;
+    padding-left: 1rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(lightgrey), to(darkgray));
+    background-image: linear-gradient(lightgrey, darkgray);
+    width: auto;
+  }
+  div.sidebar div.link:hover {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(darkgray), to(darkgray));
+    background-image: linear-gradient(darkgray, darkgray);
+  }
+  div.sidebar div.section {
+    border-top: 0.1rem solid lightslategray;
+    border-left: 0.1rem solid lightslategray;
+    padding-left: 0.2rem;
+  }
+  div.sidebar div.section ul {
+    list-style-type: disc;
+  }
+  div.sidebar h2, div.sidebar h3 {
+    text-align: left;
+    padding-left: 1rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -6,6 +6,13 @@
     padding: 0rem;
     font-family: 'Play', sans-serif;
 }
+body {
+    height: 100%;
+}
+
+img {
+    max-width: 45%;
+}
 
 h1, h2, h3, h4, h5, h6, a, p {
     text-align: center;
@@ -33,6 +40,8 @@ html {
     background-image: url("../images/bg.png");
     background-attachment: fixed;
     background-color: black;
+    min-height: 100%;
+    position: relative;
 }
 
 div {
@@ -60,14 +69,102 @@ div.header {
 div.landing {
     @include textbox;
     border-image-source: url("../images/drtc_border.png");
-    max-width: 52rem;
+    max-width: 45%;
 }
-div.links {
+div.contributors {
     @include textbox;
     border-image-source: url("../images/drtc_border.png");
-    max-width: 32rem;
+    max-width: 29%;
     ul {
         list-style-type: none;
         text-align: center;
+    }
+}
+div.textbox {
+    @include textbox;
+    border-image-source: url("../images/drtc_border.png");
+    max-width: 45%;
+}
+
+code {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+div.sidebar {
+    position: absolute;
+    left: 0rem;
+    top: 0rem;
+    width: 10%;
+    height: 100%;
+    background-color: lightgrey;
+    div.link {
+        border: 0.1rem solid lightslategrey;
+        padding: {
+            left: 1rem;
+            top: 0.1rem;
+            bottom: 0.1rem;
+        }
+        background-image: linear-gradient(lightgrey, darkgray);
+        &:hover {
+            background-image: linear-gradient(darkgray, darkgray);
+        }
+        width: auto;
+    }
+    div.section {
+        border-top: 0.1rem solid lightslategray;
+        border-left: 0.1rem solid lightslategray;
+        padding-left: 0.2rem;
+        ul {
+            list-style-type: disc;
+        }
+    }
+    h2, h3 {
+        text-align: left;
+        padding: {
+            left: 1rem;
+            top: 0.1rem; 
+            bottom: 0.1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 740px) {
+    div.sidebar {
+        position: absolute;
+        left: 0rem;
+        top: 0rem;
+        width: 20%;
+        height: 100%;
+        background-color: lightgrey;
+        div.link {
+            border: 0.1rem solid lightslategrey;
+            padding: {
+                left: 1rem;
+                top: 0.1rem;
+                bottom: 0.1rem;
+            }
+            background-image: linear-gradient(lightgrey, darkgray);
+            &:hover {
+                background-image: linear-gradient(darkgray, darkgray);
+            }
+            width: auto;
+        }
+        div.section {
+            border-top: 0.1rem solid lightslategray;
+            border-left: 0.1rem solid lightslategray;
+            padding-left: 0.2rem;
+            ul {
+                list-style-type: disc;
+            }
+        }
+        h2, h3 {
+            text-align: left;
+            padding: {
+                left: 1rem;
+                top: 0.1rem; 
+                bottom: 0.1rem;
+            }
+        }
     }
 }

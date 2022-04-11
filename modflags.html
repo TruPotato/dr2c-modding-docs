@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unofficial Death Road to Canada Modding Documentation" />
+    <meta name="title" content="Death Road to Canada Modding Docs">
+    <meta name="description" content="Unofficial Death Road to Canada Modding Documentation">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="Death Road to Canada Modding Docs">
+    <meta property="og:description" content="Unofficial Death Road to Canada Modding Documentation">
+    <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="Death Road to Canada Modding Docs">
+    <meta property="twitter:description" content="Unofficial Death Road to Canada Modding Documentation">
+    <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" href="./images/icon.png">
+    <title>DR2C Modding Docs</title>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><img src="./images/logo.png"></a>
+    </div><br>
+    <div class="textbox">
+        <div>
+        <h2>Modflag Dictionary</h2><br>
+        <code>DR2C MOD_FLAG dictionary<br><br>
+
+            USE_FILTER is a filter of the uses (like picking up objects, opening doors)<br><br>
+            
+            MOD_FLAGS correspond to STATMODS in the games files.<br>
+            They are numbered in powers of 2. <br>
+            
+            For example, an id of 3 correlates to 2^3, or 8.<br>
+            You can combine the numbers, to achieve several statmods.<br> 
+            For example, setting the MOD_FLAG of a character to be 257 (256 and 1) will give you both sick and alvis singing. <br>
+            
+            The nth power of 2 that is used for MOD_FLAGS correspods (I believe) to the position of their respective ENUM_STATMOD tag in charstatmods.df.<br>
+            
+            Below, you will find a moderately comprehensive list of MOD_FLAGS that are available to use.<br>
+            MOD_FLAGS2 is an unused variable. Feel free to use it whatever way you desire.<br>
+            It is not currently known what USE_INFO does but it is instrumental for some abilities.<br> 
+            Those marked with "No visible change" require further testing.<br><br>
+            
+            1 - Sick (reduces fighting stats, used originally for too much coffee)<br>
+            2 - Injured (unused)<br>
+            4 - Tired (reduces fighting stats)<br> 
+            8 - Supertrained (grants animals ability to use cars.)<br>
+            16 - "Clumsy Dog"<br>
+            32 - Coffee'd Up (boosts dexterity and fighting stats)<br>
+            64 - Friend of Dog additional trait<br>
+            128 - Explorer additional trait<br>
+            256 - ALVIS Singing when attacking<br>
+            512 - GRUNT (TLB) when attacking. Does not grant TLB powers.<br>
+            1024 - Pick up zombies regardless of circumstance. Identical to combining Ex-Wrestler and Grappler. Does not cause visual changes to the character.<br>
+            2048 - Battlescreams (fencer)<br>
+            4096 - Battlescreams (L*nk)<br>
+            8192 - Battlescreams (Mad scientist)<br>
+            16384 - Battlescreams (Valkryie)<br>
+            32786 - Swapping weapons causes you to attack<br>
+            65536 - Can only use guns (?)<br>
+            131072 - Swap weapons, to excrete explosively. Can kill the user. Identical to DYSP's ability.<br>
+            262144 - Causes ANIME. <br>
+            524288 - HADOUKEN<br>
+            1048576 - Fire EHZERBEAMS when using the EHZERBEAM.<br>
+            2097152 - Scream about CARRRRRLLL when attacking.<br>
+            4194304 - No visible change.<br>
+            8388608 - Cannot drive the car(?)<br>
+            16777216 - Haggler trait<br>
+            33554432 - Pathfinder trait<br>
+            67108864 - Sound Sleeper trait<br>
+            134217728 - Fireproof<br><br>
+            
+             The theoretical maximum is 2^32, for 32 individual statmods. </code>
+        </div>
+    </div>
+</body>
+</html>
