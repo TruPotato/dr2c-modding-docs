@@ -199,6 +199,12 @@ div.sidebar h2, div.sidebar h3 {
   padding-bottom: 0.1rem;
 }
 
+div div.codeblock {
+  background-color: #333;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+}
+
 @media screen and (max-width: 740px) {
   div.sidebar {
     color: black;

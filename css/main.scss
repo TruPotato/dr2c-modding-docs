@@ -138,6 +138,14 @@ div.sidebar {
     }
 }
 
+div {
+    div.codeblock {
+        background-color: #333;
+        padding: 0.3rem;
+        border-radius: 0.2rem;
+    }
+}
+
 @media screen and (max-width: 740px) {
     div.sidebar {
         color: black;
