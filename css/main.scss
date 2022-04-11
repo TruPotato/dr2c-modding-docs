@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
+
+* {
+    margin: 0rem;
+    padding: 0rem;
+    color: white;
+    font-family: 'Play', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    text-align: center;
+}
+
+html {
+    background-image: url("../images/bg.png");
+    background-color: black;
+}
+
+div {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    display: block;
+    max-width: auto;
+}
+
+div.header {
+    margin: {
+        top: 3rem;
+    }
+    img {
+        margin: {
+            left: auto;
+            right: auto;
+        }
+        display: block;
+    }
+}
+
+div.landing {
+    border-top-color: transparent;
+    border-top-style: solid;
+    border-top-width: 20px;
+    border-right-color: transparent;
+    border-right-style: solid;
+    border-right-width: 20px;
+    border-bottom-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 20px;
+    border-left-color: transparent;
+    border-left-style: solid;
+    border-left-width: 20px;
+    border-image-source: url("http://deathroadtocanada.com/images/drtc_border.png");
+    border-image-slice: 20;
+    border-image-width: 1;
+    border-image-outset: 0;
+    max-width: 52rem;
+    h1, h2, h3, h4, h5, h6, p, div {
+        background-color: black;
+    }
+}
