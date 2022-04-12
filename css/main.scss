@@ -129,6 +129,9 @@ div.sidebar {
             &:visited {
                 color: black;
             }
+            &:hover {
+                color: lightslategray;
+            }
         }
         border: 0.1rem solid lightslategrey;
         padding: {

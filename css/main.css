@@ -196,6 +196,10 @@ div.sidebar div.link a:visited {
   color: black;
 }
 
+div.sidebar div.link a:hover {
+  color: lightslategray;
+}
+
 div.sidebar div.link:hover {
   background-image: -webkit-gradient(linear, left top, left bottom, from(darkgray), to(darkgray));
   background-image: linear-gradient(darkgray, darkgray);
