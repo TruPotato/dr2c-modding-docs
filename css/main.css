@@ -98,8 +98,8 @@ div.landing {
   max-width: 45%;
 }
 
-div.landing h1, div.landing h2, div.landing h3, div.landing h4, div.landing h5, div.landing h6, div.landing p, div.landing a, div.landing div {
-  background-color: black;
+div.landing div {
+  background-color: rgba(0, 0, 0, 0.875);
 }
 
 div.contributors {
@@ -123,8 +123,8 @@ div.contributors {
   max-width: 29%;
 }
 
-div.contributors h1, div.contributors h2, div.contributors h3, div.contributors h4, div.contributors h5, div.contributors h6, div.contributors p, div.contributors a, div.contributors div {
-  background-color: black;
+div.contributors div {
+  background-color: rgba(0, 0, 0, 0.875);
 }
 
 div.contributors ul {
@@ -159,8 +159,8 @@ div.textbox {
   color: white;
 }
 
-div.textbox h1, div.textbox h2, div.textbox h3, div.textbox h4, div.textbox h5, div.textbox h6, div.textbox p, div.textbox a, div.textbox div {
-  background-color: black;
+div.textbox div {
+  background-color: rgba(0, 0, 0, 0.875);
 }
 
 code {
