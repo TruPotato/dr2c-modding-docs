@@ -1,8 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap");
+@font-face {
+  font-family: "DR2C";
+  src: url("./fonts/DR2C_Font.ttf");
+}
+
 * {
   margin: 0rem;
   padding: 0rem;
-  font-family: 'Play', sans-serif;
+  font-family: DR2C;
+  font-weight: normal;
+  line-height: 1.25rem;
+  cursor: url("./cursors/mouse1.cur"), auto;
 }
 
 body {
@@ -19,10 +27,12 @@ h1, h2, h3, h4, h5, h6, a, p {
 
 h1, h2, h3, h4, h5, h6, p {
   color: white;
+  cursor: url("./cursors/mouse3.cur"), text;
 }
 
 a {
   color: red;
+  cursor: url("./cursors/mouse2.cur"), pointer;
 }
 
 a:hover {
@@ -35,6 +45,10 @@ a:visited {
 
 a:active {
   color: white;
+}
+
+a img {
+  cursor: url("./cursors/mouse2.cur"), pointer;
 }
 
 html {
@@ -115,6 +129,11 @@ div.contributors h1, div.contributors h2, div.contributors h3, div.contributors 
 div.contributors ul {
   list-style-type: none;
   text-align: center;
+}
+
+div.contributors ul li {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
 }
 
 div.textbox {
@@ -210,6 +229,34 @@ code {
   background-color: #333;
 }
 
+@media screen and (max-width: 1150px) {
+  div.sidebar h2, div.sidebar h3 {
+    font-size: 1rem;
+  }
+  div.sidebar a {
+    font-size: 0.75rem;
+  }
+  div.sidebar h2, div.sidebar h3, div.sidebar a {
+    padding-left: 0.15rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+  }
+}
+
+@media screen and (max-width: 1010px) {
+  div.sidebar h2, div.sidebar h3 {
+    font-size: 1.5vw;
+  }
+  div.sidebar a {
+    font-size: 1vw;
+  }
+  div.sidebar h2, div.sidebar h3, div.sidebar a {
+    padding-left: 0.15vw;
+    padding-top: 0.1vw;
+    padding-bottom: 0.1vw;
+  }
+}
+
 @media screen and (max-width: 740px) {
   div.sidebar {
     color: black;
@@ -222,9 +269,6 @@ code {
   }
   div.sidebar div.link {
     border: 0.1rem solid lightslategrey;
-    padding-left: 1rem;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
     background-image: -webkit-gradient(linear, left top, left bottom, from(lightgrey), to(darkgray));
     background-image: linear-gradient(lightgrey, darkgray);
     width: auto;
@@ -251,9 +295,6 @@ code {
   div.sidebar h2, div.sidebar h3 {
     color: black;
     text-align: left;
-    padding-left: 1rem;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
   }
 }
 /*# sourceMappingURL=main.css.map */
