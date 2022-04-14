@@ -37,57 +37,57 @@
                 <h2>Inputs</h2><br>
                             <br>
                 Variable types are put in brackets, e.g. `custom`[name]` allowing any text input, `power`[number]` requiring a numerical input. This formatting is used in this guide for clarity.<br>
-                `[name]` - Any text input using letters, punctuation, numbers, or spaces.<br>
-                `[designation]` - Any text input using only letters.<br>
-                `[number]` - Any input using a decimal number.<br>
-                `[bool]` - An input of either `0` or `1`, representing "false" and "true", respectively.<br>
-                `[range]` - An input in a range designated in the command's description.<br>
-                `[angle]` - Any input using a decimal number between -180 and 180.<br>
-                `[chance]` - Any decimal input between 0 and 1 to denote a percent chance. For instance, a chance value of 0.3 is equal to 30%.<br>
-                `[unique]` - Any input described in the command's description.<br>
+                <code>[name]</code> - Any text input using letters, punctuation, numbers, or spaces.<br>
+                <code>[designation]</code> - Any text input using only letters.<br>
+                <code>[number]</code> - Any input using a decimal number.<br>
+                <code>[bool]</code> - An input of either `0` or `1`, representing "false" and "true", respectively.<br>
+                <code>[range]</code> - An input in a range designated in the command's description.<br>
+                <code>[angle]</code> - Any input using a decimal number between -180 and 180.<br>
+                <code>[chance]</code> - Any decimal input between 0 and 1 to denote a percent chance. For instance, a chance value of 0.3 is equal to 30%.<br>
+                <code>[unique]</code> - Any input described in the command's description.<br>
                             <br>
                             <br>
                 <h2>Weapon Naming</h2><br>
                             <br>
-                `custom: [name]` - Create a weapon from scratch. Stats are assigned via tabbed commands under the weapon.<br>
-                `[weapon designation] clone-to: [name]` - Create a weapon using stats from a `custom` weapon. Stats assigned to the clone overwrite the pre-existing values given from the `custom` weapon.<br>
-                `weapon: [weapon designation]` - Give a weapon a designation. Weapon designations are required to be one word (e.g. the Sniper Rifle's designation is `silentrifle`) and are used in the `clone-to` command.<br>
+                <code>custom: [name]</code> - Create a weapon from scratch. Stats are assigned via tabbed commands under the weapon.<br>
+                <code>[weapon designation] clone-to: [name]</code> - Create a weapon using stats from a `custom` weapon. Stats assigned to the clone overwrite the pre-existing values given from the `custom` weapon.<br>
+                <code>weapon: [weapon designation]</code> - Give a weapon a designation. Weapon designations are required to be one word (e.g. the Sniper Rifle's designation is `silentrifle`) and are used in the `clone-to` command.<br>
                             <br>
                 <h2>Appearance and Audio</h2><br>
                             <br>
-                `spriteid: [number]` - Choose the sprite for a weapon from the file `dr2c_weapons` under the path `DeathRoadToCanada/gfx/items`. Every cell is 8x32 pixels and the engine assigns a number to each cell, starting with 0 in the top left most cell. For instance, weapons using the Wrench sprite would use `spriteid`17`, as it is the 18th sprite.<br>
+                <code>spriteid: [number]</code> - Choose the sprite for a weapon from the file `dr2c_weapons` under the path `DeathRoadToCanada/gfx/items`. Every cell is 8x32 pixels and the engine assigns a number to each cell, starting with 0 in the top left most cell. For instance, weapons using the Wrench sprite would use `spriteid`17`, as it is the 18th sprite.<br>
                 DISCLAIMER - There is an alternate sprite designation system that vanilla weapons use, involving hexidecimal numbers and sprite offsets. The previously described method works identically to the vanilla system.<br>
-                `spriteid16x32: [number]` - Choose the sprite for a weapon from the file `dr2c_weapons-16x32px` under the path `DeathRoadToCanada/gfx/items`.<br>
+                <code>spriteid16x32: [number]</code> - Choose the sprite for a weapon from the file `dr2c_weapons-16x32px` under the path `DeathRoadToCanada/gfx/items`.<br>
                             <br>
                 <h2>Resource Consumption</h2><br>
                             <br>
-                `fuel_type: [unique]` - Used when a non-ammo resource is used to attack. Possible resources are `LOOT_GAS`, `LOOT_MEDICAL`, and `LOOT_FOOD`.<br>
-                `burn_idle: [number]` - ==TODO==. Related to `fuel_type`.<br>
-                `burn_active: [number]` - ==TODO==. Related to `fuel_type`.<br>
-                `ammo_type: [unique]` - Determine the ammunition used when shooting a firearm. Possible ammo types are `LOOT_BULLET` (pistol ammo), `LOOT_RIFLE_SHELL`, and `LOOT_SHOTGUN_SHELL`.<br>
+                <code>fuel_type: [unique]</code> - Used when a non-ammo resource is used to attack. Possible resources are `LOOT_GAS`, `LOOT_MEDICAL`, and `LOOT_FOOD`.<br>
+                <code>burn_idle: [number]</code> - ==TODO==. Related to `fuel_type`.<br>
+                <code>burn_active: [number]</code> - ==TODO==. Related to `fuel_type`.<br>
+                <code>ammo_type: [unique]</code> - Determine the ammunition used when shooting a firearm. Possible ammo types are `LOOT_BULLET` (pistol ammo), `LOOT_RIFLE_SHELL`, and `LOOT_SHOTGUN_SHELL`.<br>
                             <br>
                 <h2>Melee Parameters</h2><br>
                             <br>
                 <h3>Positioning</h3><br>
-                `melee_start_angle: [angle]` - Determines a melee weapon's resting angle when ==TODO==<br>
-                `melee_end_angle: [angle]` - Determines a melee weapon's ==TODO==<br>
-                `melee_windup_angle: [angle]` - ==TODO==<br>
-                `melee_shift.x: [number]` - ==TODO==<br>
-                `melee_shift.y: [number]` - ==TODO==<br>
-                `melee_off.x: [number]` - ==TODO==<br>
-                `melee_off.y: [number]` - ==TODO==<br>
+                <code>melee_start_angle: [angle]</code> - Determines a melee weapon's resting angle when ==TODO==<br>
+                <code>melee_end_angle: [angle]</code> - Determines a melee weapon's ==TODO==<br>
+                <code>melee_windup_angle: [angle]</code> - ==TODO==<br>
+                <code>melee_shift.x: [number]</code> - ==TODO==<br>
+                <code>melee_shift.y: [number]</code> - ==TODO==<br>
+                <code>melee_off.x: [number]</code> - ==TODO==<br>
+                <code>melee_off.y: [number]</code> - ==TODO==<br>
                             <br>
                 <h3>Combat stats</h3><br>
-                `melee_reach: [number]` - ==TODO==<br>
-                `melee_retract: [number]` - ==TODO==<br>
-                `melee_range: [number]` - ==TODO==<br>
-                `melee_extra_hits: [number]` - Determines the number of zombies a swing can hit. A value of `0` will make the weapon only hit one target at a time.<br>
-                `melee_extra_chance: [chance]` - Determines how often a weapon will be able to hit multiple targets, as opposed to only one.<br>
-                `melee_break_scale: [chance]` - Determines the chance of a weapon breaking upon hitting a target.<br>
-                `power: [number]` - Determines the range of damage dealt.<br>
-                `cooldown: [number]` - Determines the time between swings in seconds (including the swing period).<br>
-                `thrust_range: [number]` - ==TODO==<br>
-                `knockback: [number]` - Determines how easy it is for a hit to knock over a zombie.<br>
+                <code>melee_reach: [number]</code> - ==TODO==<br>
+                <code>melee_retract: [number]</code> - ==TODO==<br>
+                <code>melee_range: [number]</code> - ==TODO==<br>
+                <code>melee_extra_hits: [number]</code> - Determines the number of zombies a swing can hit. A value of `0` will make the weapon only hit one target at a time.<br>
+                <code>melee_extra_chance: [chance]</code> - Determines how often a weapon will be able to hit multiple targets, as opposed to only one.<br>
+                <code>melee_break_scale: [chance]</code> - Determines the chance of a weapon breaking upon hitting a target.<br>
+                <code>power: [number]</code> - Determines the range of damage dealt.<br>
+                <code>cooldown: [number]</code> - Determines the time between swings in seconds (including the swing period).<br>
+                <code>thrust_range: [number]</code> - ==TODO==<br>
+                <code>knockback: [number]</code> - Determines how easy it is for a hit to knock over a zombie.<br>
             </p>
             <br>
             <h6>Thanks, MagFrag!</h6>
