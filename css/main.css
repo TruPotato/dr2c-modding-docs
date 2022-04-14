@@ -163,6 +163,10 @@ div.textbox div {
   background-color: rgba(0, 0, 0, 0.875);
 }
 
+#specials {
+  max-width: 55%;
+}
+
 code {
   color: white;
   font-family: 'Courier New', Courier, monospace;
@@ -222,6 +226,11 @@ div.sidebar h2, div.sidebar h3 {
   padding-left: 1rem;
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
+}
+
+div.sidebar h2 {
+  padding: 0.5rem;
+  padding-left: 1rem;
 }
 
 div div.codeblock {

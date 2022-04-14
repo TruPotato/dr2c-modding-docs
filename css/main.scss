@@ -110,6 +110,10 @@ div.textbox {
     color: white;
 }
 
+#specials {
+    max-width: 55%;
+}
+
 code {
     color: white;
     font-family: 'Courier New', Courier, monospace;
@@ -162,6 +166,10 @@ div.sidebar {
             top: 0.1rem; 
             bottom: 0.1rem;
         }
+    }
+    h2 {
+        padding: 0.5rem;
+        padding-left: 1rem;
     }
 }
 

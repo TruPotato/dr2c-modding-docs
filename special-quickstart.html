@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unofficial Death Road to Canada Modding Documentation" />
+    <meta name="title" content="Death Road to Canada Modding Docs">
+    <meta name="description" content="Unofficial Death Road to Canada Modding Documentation">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="Death Road to Canada Modding Docs">
+    <meta property="og:description" content="Unofficial Death Road to Canada Modding Documentation">
+    <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="Death Road to Canada Modding Docs">
+    <meta property="twitter:description" content="Unofficial Death Road to Canada Modding Documentation">
+    <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" href="./images/icon.png">
+    <title>DR2C Modding Docs</title>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><img src="./images/logo.png"></a>
+    </div><br>
+   
+    <div class="textbox" id="specials">
+        <div>
+            <p><h2>Making a Special Character</h2><br> IMPORTANT NOTE: Speak to Arq#0001 for permission to use a modified version of their code and Hwang#2760 for permission to use their format!<br>
+<br>
+                Making a Special Character is a long and involved process. However, there is a step-by-step process to doing it. Note that different modders may use different methods to create a special character.<br>
+                <br>
+                You will need to edit the following files to create a fully-implemented custom character:<br>
+                Under <code>DeathRoadToCanada</code>:<br>
+                <code>gfx/chars/dr2c_special_chars.png</code><br>
+                <br>
+                Under <code>DeathRoadToCanada/deathforth</code>:<br>
+                <code>blurb/blogic.df<br>
+                charmisc.df<br>
+                decks.df<br>
+                mission-events-human.df<br>
+                events/despair/sort.df<br>
+                events/finale/epilogue-check.df</code><br>
+                <br>
+                Finally, with this method, two files will have to be created with the <code>.df</code> extension. One will have blurb information, while the other will have recruitment and despair information. The specific names are unimportant, but names that are short and descriptive are ideal (e.g. <code>char_blurb.df</code> and <code>char_rd.df</code>, respectively).<br>
+                <br>
+                The blurb and recruit/despair files do not have to be placed in any particular folder apart from being placed in <code>deathforth</code>, but it is recommended to put them in a folder relevant to their purposes. You may also place them in a folder specifically for custom special characters.<br>
+                <br>
+                You will also have to reference the following files:<br>
+                <code>perkdef.df<br>
+                weapondef.df</code><br>
+                in the <code>deathforth</code> folder for the names of perks, traits, and weapons.<br>
+                <br>
+                <hr><br>
+                1. Sprites<br>
+                Special character sprites are stored in <code>DeathRoadToCanada/gfx/chars/dr2c_special_chars.png</code>. Each character is split into 7 sprites, each stored in a 24x24 pixel cell on a 24-pixel high row. As of the LIVER update, the last vanilla character is E*FUDD, at row 118. Create your character sprites and remember the row - that is your character's "special type", or designation.<br>
+                <br>
+                <hr><br>
+                2. Weapons<br>
+                Weapons are defined in <code>weapondef.df</code> and are referred to by their weapon designation. Consult the Weapon Documentation for implementing custom weapons. If you intend to only assign vanilla weapons, you do not have to modify <code>weapondef.df</code>. Weapons are designated with the <code>weapon</code> parameter and is referenced with the <code>WEAPON_[designation]</code> parameter.<br>
+                <br>
+                <hr><br>
+                3. Stats and .ify-ification<br>
+                After the sprites have been created, open <code>deathforth/charmisc.df</code>. At the bottom of the file, define the character's .charify.<br>
+                <br>
+                .charify uses the following format, X representing numerical values. The following code was modified, but originally written by discord user Arq#0001.<br>
+                <br>
+                <div class="codeblock"><code>: .charify args( chara ) // The formatting for .ify references typically follows the format of .[one-word character name].ify.<br>
+                    119 <- chara .specialtype! X <- chara .female! // Use your character's designation for the first value. Set .female! to 0 for male characters and 1 for female characters.<br>
+                    X <- chara .wits! X <- chara .attitude! X <- chara .composure! X <- chara .loyalty! // Stats. Replace "X" with a value. Values are set between 0 and 6, 0 being the worst.<br>
+                    X <- chara .strength! X <- chara .fitness! X <- chara .shooting!<br>
+                    X <- chara .vitality! X <- chara .health! // Both parameters are optional. Without them, character health defaults to 3 HP.<br>
+                    "Trait" <- chara .trait! // Optional flavor text. Insert a character trait - actual trait names can be found in `perkdef.df`<br>
+                    "Perk" <- chara .perk! // Optional flavor text. Insert a perk - actual perk names can be found in `perkdef.df`<br>
+                    "is a custom character who needs a job." <- chara .job! // Type up a very brief description of the character.<br>
+                    WEAPON_[WEAPON] <- chara .weapona! X <- chara .weapon_nodropa! // References a weapon via a weapon designation (see the Weapon Documentation).  Defining a weapon as being `weapona` puts it in the character's first slot. Defining a weapon with `1 <- chara.weapon_nodropa!` makes it so that the player is unable to move the weapon out of the character's inventory or pick it up after death. To allow the character to move the weapon, you can leave the parameter out.<br>
+                    WEAPON_[WEAPON] <- chara .weaponb! X <- chara .weapon_nodropb! // See above. `weaponb` means that the weapon is in the character's second slot.<br>
+                    // Bonus vaules increase the value and cap of a statistic. Modify or delete them depending on what you chose.<br>
+                    X STAT_MORALE <- chara .bonus! // Stat bonuses from Traits. Replace the "X" with a valid value.<br>
+                    X STAT_VITALITY <- chara .bonus!<br>
+                    X STAT_DEXTERITY <- chara .bonus!<br>
+                    X STAT_STRENGTH <- chara .bonus!<br>
+                    X STAT_FITNESS <- chara .bonus!<br>
+                    X STAT_SHOOTING <- chara .bonus! // If the bonus is set to 3 and the base stat is set to 3, it will appear as 6 and have a cap of 9.<br>
+                    X STAT_MEDICAL <- chara .bonus!<br>
+                    X STAT_MECHANICAL <- chara .bonus!<br>
+                    X STAT_WITS <- chara .bonus!<br>
+                    X STAT_ATTITUDE <- chara .bonus!<br>
+                    X STAT_COMPOSURE <- chara .bonus!<br>
+                    X STAT_LOYALTY <- chara .bonus!<br>
+                ;</code></div><br>
+                For further parameters, consult "Extra .ify Parameters".<br>
+                <hr><br>
+                4. Recruitment<br>
+                There are two methods of special character recruitment: roadside events and hiring from trader camps.<br>
+                <br>
+                Roadside events are defined in your character's recruitment/despair file. The code is as follows:<br>
+                <br>
+                <div class="codeblock"><code>cyoa{ road{<br>
+                <br>
+                cyoa-bridge: char-recruit // replace "char" with your character's designation<br>
+                    ricon<br>
+                    team-count 3 > if<br>
+                        ($ 	"There are too many people in the party. Who should go?" $) cyoa-text! // This is text used for when the player tries to recruit this special character when they have a full party. Replace the text within the quotation marks for custom text.<br>
+                        recruit-replace?`<br>
+                    then;<br>
+                    ($ rname  .. " joins the party." $) cyoa-text! goodfx // This is the text used when the player successfully recruits the special character.<br>
+                        recruitee .strengthREV recruitee .fitnessREV // This line of code determines what stats are revealed upon recruiting a character.<br>
+                        recruited<br>
+                ;<br>
+                <br>
+                cyoa: char-test // This is the name used for the event in the game's code.<br>
+                    "Custom Recruit" cyoa-title! // This is the title used for the event, displayed at the top.<br>
+                    char-gen to recruitee<br>
+                    "Char" recruitee .name! // This is the name of the character.<br>
+                    ricon<br>
+                    3 recruitee .morale! recruitee .charify // The line below is the start of the event's body text. `$ Thegroup ..` references the current party. Start new lines to insert line breaks into the body text.<br>
+                    ($ Thegroup .. " notices something.<br>
+                    Some dude just showed up. // Start new lines to insert line breaks into the body text.<br>
+                    They've got to be a custom character." $) cyoa-text! basic-tone // This is the final line of the event.<br>
+                        choice( "Recruit them" )choice: char-recruit // This is the choice used to recruit the character.<br>
+                        choice( "Ignore them" )choice // This is the choice used to dismiss the event without recruiting the character.<br>
+                ;<br>
+                } }</code></div><br>
+                <br>
+                Once you complete this part of your Recruitment file, go to <code>decks.df</code> and put the following code into a new line above <code>uses recruitdecks.df</code>:<br>
+                <code>uses testchar-files/char_rd.df // Replace the filename with the path from deathforth to your file.</code><br>
+                <br>
+                <h6>TODO</h6>
+                God help you if you want to include camp recruitment, because as of right now, the guide does not have this information. If you are looking to create a character that is recruited via trader camps you may ask for help in the <a href="https://discord.gg/J7HChAa" target="_blank">Discord server</a> or investigate the code of other special characters.<br>
+                <br>
+                <hr><br>
+                5. Despair<br>
+                If a character experiences a Despair Event, this section of code determines the content. This code should be placed in your recruitment/despair file:<br>
+                <br>
+                <div class="codeblock"><code>uses base.df<br>
+                uses charfilt.df<br>
+                uses charstats.df<br>
+                uses road.df<br>
+                <br>
+                cyoa{ road{<br>
+                <br>
+                cyoa: char-despair // This is the name of the event.<br>
+                    bully choosechar cicon<br>
+                <br>
+                        "Custom Recruit Feels Despair" cyoa-title! // This is the title of the event.<br>
+                        ($ cname .. " is filled with despair." $) cyoa-text! // This is the first line of the despair event.<br>
+                        solo if <br>
+                            "They abandon the car." +cr +text // This is the text that is used for when the custom character experiences a despair event as the last survivor.<br>
+                        else<br>
+                            ($ Theothers .. " watch as they leave."$) +cr +text // This is the text that is used for when there are other party members in the car.<br>
+                        then<br>
+                        ($ cname .. " has left the team." $) +cr +text // This is the final text that indicates that your character has left the team.<br>
+                        decruit-bad-silent-takeweapons goodfx<br>
+                ;<br>
+                <br>
+                } }</code></div><br>
+                <br>
+                After completing the Despair file, go to `sort.df` and insert the following code under line 105:<br>
+                <div class="codeblock"><code>		bully-st 119 = if // Replace the specialtype with your character's specialtype.<br>
+                            char-despair // Replace "char" with your character's name.<br>
+                        then;</code></div><br>
+                <br>
+                <hr><br>
+                6. Blurbs<br>
+                Blurbs are the one-liners said by special characters while in a car. The following code should go into your character's blurb file:<br>
+                <div class="codeblock"><code>// blurb<br>
+                // Warning! the words "CHAR" and "char" are used in case-sensitive contexts!<br>
+                    : CHAR-oneline1 "ONELINER" ; // One-liners are numbered.<br>
+                    : CHAR-oneline2 "ONELINER 2" ;<br>
+                    : CHAR-oneline3 "ONELINER 3" ;<br>
+                    : CHAR-oneline4 "ONELINER 4" ;<br>
+                <br>
+                    deck-new // Add as many cards as there are one-liners.<br>
+                        card: CHAR-oneline1<br>
+                        card: CHAR-oneline2<br>
+                        card: CHAR-oneline3<br>
+                        card: CHAR-oneline4<br>
+                    constant CHAR-ONELINERS<br>
+                    CHAR-ONELINERS var char-oneliners<br>
+                    CHAR-ONELINERS shuffles to char-oneliners<br>
+                <br>
+                : char-oneliner<br>
+                    char-oneliners depths 0= if CHAR-ONELINERS shuffles to char-oneliners then<br>
+                    blurbslot 0= if<br>
+                        drawcard blurbsay<br>
+                    then<br>
+                ;`<br>
+                <br>
+                    deck-new<br>
+                    X cards: char-oneliner // Replace "X" with the number of one-liners you have.<br>
+                <br>
+                    constant BLURB-CHAR-DECK<br>
+                    BLURB-CHAR-DECK var blurb-char-deck<br>
+                    BLURB-CHAR-DECK shuffles to blurb-char-deck</code></div><br>
+                <br>
+                After completing your blurb file, go to <code>blogic.df</code>. Create a new line at line 47 and paste the following:<br>
+                <code>uses testchar_files/char_blurb.df // Use the path to your character's blurb file.</code><br>
+                <br>
+                After the blurb command for special character 118 (line 212), create a new line:<br>
+                <div class="codeblock"><code>	1st-st 119 = if blurb-char-deck depths 0= if BLURB-CHAR-DECK shuffles to blurb-char-deck then then; // Replace "char" and "CHAR" with the apporpriate case-sensitive proper names.</code></div><br>
+                <br>
+                <hr><br>
+                7. Death Quote (Optional)<br>
+                Death quotes are the text used for when a character dies. They are stored in the <code>mission-events-human.df</code> file. If one is not specified, then the character will pull from a random entry from the list at the top of the file. The format for a death quote is as follows (inserted at line 215, under <code>.specialtype@ 90</code>):<br>
+                <div class="codeblock"><code>	<- chara .specialtype@ [special type] = if RED "DEATH QUOTE" .. <- chara thingyell then; // Replace [special type] with your character's special type. Replace "RED" with "BLUE" or "FLASHY" for different effects.</code></div><br>
+                <br>
+                <hr><br>
+                8. Epilogue Quote (Optional)<br>
+                An epilogue quote is used at the end of the game if a character reaches Canada. It is displayed during the ending cutscene. These quotes are designated in <code>events/finale/epilogue-check.df</code>. If not designated, the game defaults to a generic term. The format is as follows (insterted at the bottom of the Special Characters list):<br>
+                <div class="codeblock"><code>	<- char .specialtype@ 119 = if "reached Canada, all the while their developer forgot to modify their custom epilogue text.*" then; // Custom epilogue text. Remember to change the specialtype to your specialtype.</code></div><br>
+                <br>
+                <hr><br>
+                After you've completed the previous steps, you should have a fully-functioning character in Death Road to Canada.</p><br>
+                <h6>Thanks, MagFrag, Arq, and Hwang!</h6>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <h2>Links</h2>
+        <div class="link">
+            <a href="index.html">Home</a>
+        </div>
+        <div class="section">
+            <h3>Misc</h3>
+            <ul>
+                <li><div class="link">
+                    <a href="modflags.html">Modflags</a>
+                </div></li>
+                <li><div class="link">
+                    <a href="weapons-general.html">Weapons</a>
+                </div></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>Characters</h3>
+            <ul>
+                <li><div class="link">
+                    <a href="special-quickstart.html">Specials Guide</a>
+                </div></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
