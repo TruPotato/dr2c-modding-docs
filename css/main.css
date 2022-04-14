@@ -31,6 +31,13 @@ h1, h2, h3, h4, h5, h6, p {
   cursor: url("./cursors/mouse3.cur"), text;
 }
 
+h2#header {
+  background-image: url("../images/HeaderBG.png");
+  background-size: contain;
+  padding: 0.75rem 0rem 0.75rem 0rem;
+  z-index: 10000;
+}
+
 a {
   color: red;
   cursor: url("./cursors/mouse2.cur"), pointer;
